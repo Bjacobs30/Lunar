@@ -8,7 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class Events extends Group{
-	public static final String SKIN_JSON_UI = "skin/uiskin.json";
+	public static final String SKIN_JSON_UI = "purple skin/uiskin.json";
 	protected static final Skin skin = new Skin(Gdx.files.internal(SKIN_JSON_UI));
 	
 	public Events(Image icon) {

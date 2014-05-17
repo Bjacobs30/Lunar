@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.GLTexture;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -19,24 +20,19 @@ public class AbstractScreen implements Screen{
 	
 	protected Stage stage;
 	
-	private SpriteBatch batch;
-    private Texture texture;
-    private TextureRegion region;
+	protected SpriteBatch batch;
+    protected Texture texture;
 
 	public AbstractScreen(LunarMain l) {
 		lunar = l;
 		
-		this.stage = new Stage( 480,800, true );
+		this.stage = new Stage( Gdx.graphics.getWidth(),Gdx.graphics.getHeight(), true );
 	}
 	@Override
 	public void render(float delta) {
 		
 		// update the actors
         stage.act( delta );
-        
-        //Paint screen purple
-		//Gdx.gl.glClearColor( 0.190f, 0.105f, 0.235f, .5f );
-        //Gdx.gl.glClear( GL20.GL_COLOR_BUFFER_BIT );
         
         batch.begin();
         batch.draw(texture, 0, 0);
@@ -96,5 +92,8 @@ public class AbstractScreen implements Screen{
         }
         return skin;
     }
-
+	
+	protected void addActor(Actor a) {
+		stage.addActor(a);
+	}
 }

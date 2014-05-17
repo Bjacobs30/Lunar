@@ -28,7 +28,7 @@ public class LoginPage extends AbstractScreen{
 		Texture texture = new Texture(Gdx.files.internal("data/icon.png"));
 		Image icon = new Image(texture);
 		
-		table.add(icon).spaceBottom( 100 ).spaceTop(300).colspan(2);
+		table.add(icon).spaceBottom( 100 ).spaceTop(300).colspan(2).height(225).width(225);
         table.row();
         
         //Email field

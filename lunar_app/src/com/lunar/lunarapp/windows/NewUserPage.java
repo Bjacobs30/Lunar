@@ -22,11 +22,11 @@ public class NewUserPage extends AbstractScreen {
 	public void show() {
 		super.show();
 
-		//background
+		//lunar icon
 		Texture texture = new Texture(Gdx.files.internal("data/icon.png"));
 		Image icon = new Image(texture);
 		
-		table.add(icon).spaceBottom(100).spaceTop(200);
+		table.add(icon).spaceBottom(100).spaceTop(200).height(225).width(225);
         table.row();
         
         // register the button "Facebook button"
